@@ -11,4 +11,13 @@ def index(request):
 def book_by_id(request,book_id):
     book = Book.objects.get(pk=book_id)
     #return HttpResponse(f"Book {book.title}, Publicado {book.date_pub}")
-    return render(request,'book_details.html', {'book':book})
+    return render(request,'book_details.html', {'book' : book})
+
+def home(request):
+    return render(request,'myapp/home.html')
+
+def contact(request):
+    return render(request,"myapp/contact.html")
+
+def gallery(request):
+    return render(request, "myapp/gallery.html")

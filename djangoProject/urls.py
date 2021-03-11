@@ -17,9 +17,10 @@ Including another URLconf
 
 from django.urls import path,include
 from django.contrib import admin
+from django.config import settings
+from django.config.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app/', include('myapp.urls'))
-
-]
+    path('', include('myapp.urls'))
+] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
